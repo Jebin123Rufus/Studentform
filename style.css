@@ -1,0 +1,47 @@
+.container{
+    display: grid;
+    place-items: center;
+}
+.centered-div{
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    padding: 10px;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+}
+select{
+    width: 100%;
+    box-sizing: border-box;
+}
+table{
+    width: auto;
+    border-collapse: collapse;
+}
+td,th{
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    padding: 8px;
+    text-align: left;
+    white-space: nowrap;
+}
+button{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: cyan;
+}
+.box{
+    display: grid;
+    place-items: center;
+    margin: 25px;
+}
+.deletebutton{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: red;
+}
+.deletebutton:hover{
+    background-color: cyan;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FORM</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <center>
+        <h1>STUDENT FORM</h1>
+        </center>
+        <div class="container">
+            <div class="centered-div">
+        <table>
+            <form>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" placeholder="Enter your name "></td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td><input type="number" placeholder="Enter your age"></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td><input type="radio" name="Gender">Male <input type="radio" name="Gender">Female</td>
+                </tr>
+                <tr>
+                    <td>Course</td>
+                    <td>
+                        <select>
+                            <option>JavaScript</option>
+                            <option>C++</option>
+                            <option>Python</option>
+                            <option>PHP</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>E-mail</td>
+                    <td><input type="email" placeholder="Enter your E-mail"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button onclick="add()">Save</button>
+                    </td>
+                </tr>  
+            </form>
+        </table>
+        </div>
+        </div>
+        <div class="box">
+            <div>
+                <table id="datatable">
+                    <form>
+                        <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>AGE</th>
+                            <th>COURSE</th>
+                            <th>GENDER</th>
+                            <th>EMAIL</th>
+                            <th>ACTION</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </form>
+                </table>
+
+            </div>
+        </div>
+        <script>
+            function add(){
+            event.preventDefault()
+            const name=document.querySelector('input[type="text"]').value
+            const age=document.querySelector('input[type="number"]').value
+            const gender=document.querySelector('input[name="Gender"]:checked').nextSibling.textContent.trim()
+            const course=document.querySelector('select').value
+            const email=document.querySelector('input[type="email"]').value
+            const table=document.getElementById('datatable').getElementsByTagName('tbody')[0]
+            const newrow=table.insertRow()
+            const cell1=newrow.insertCell(0)
+            const cell2=newrow.insertCell(1)
+            const cell3=newrow.insertCell(2)
+            const cell4=newrow.insertCell(3)
+            const cell5=newrow.insertCell(4)
+            const cell6=newrow.insertCell(5)
+            cell1.innerHTML=name
+            cell2.innerHTML=age
+            cell3.innerHTML=course
+            cell4.innerHTML=gender
+            cell5.innerHTML=email
+            cell6.innerHTML='<button class="deletebutton" onclick="deleteRow(this)">Delete</button>'
+            document.querySelector('form').reset()
+            }
+            function deleteRow(button){
+                const row=button.parentNode.parentNode
+                row.parentNode.removeChild(row)
+            }
+            
+            
+        </script>
+    </body>
+</html>
+
+
